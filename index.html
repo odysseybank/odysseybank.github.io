@@ -66,13 +66,11 @@
             alert("Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.");
         }
     }
-        document.querySelectorAll("#bhtml").forEach(button => {
-          button.addEventListener("click", function(event) {
-            event.preventDefault();
-            const urlWithoutExtension = this.getAttribute("href").replace(".html", "");
-            window.location.href = urlWithoutExtension;
-          });
-        });
+document.getElementById("bhtml").addEventListener("click", function(event) {
+    event.preventDefault();
+    const urlWithoutExtension = window.location.href.replace(".html", "");
+    window.location.href = urlWithoutExtension;
+});
 </script>
 
 </body>
