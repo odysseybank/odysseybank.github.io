@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Odyssey - Strona Demonstracyjna</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #a3a3a3; /* tło dla całej strony */
+    }
+    header {
+        background-color: #545454;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px; /* zaokrąglenie rogów */
+    }
+    header a {
+        color: #000000; /* kolor tekstu */
+        text-decoration: none; /* brak podkreślenia */
+        margin-left: 10px; /* odstęp od ikony */
+    }
+    nav {
+        background-color: #474747; /* niebieski kolor dla nawigacji */
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px; /* zaokrąglenie rogów */
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 80%;
+        background-color: #919191; /* lekko ciemniejsze tło dla głównej zawartości */
+        border-radius: 10px; /* zaokrąglenie rogów */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* cień dla kontenera */
+    }
+    .balance {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .buttons {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .buttons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 60px;
+        border-radius: 10px; /* zaokrąglenie rogów */
+        background-color: #5c5c5c;
+        margin: 10px;
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .history {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-radius: 10px; /* zaokrąglenie rogów */
+    }
+    .history .section {
+        flex-basis: 45%; /* 45% szerokości dla każdej sekcji */
+    }
+    .history h2 {
+        text-align: center;
+    }
+    .balance p {
+        font-weight: bold;
+    }
+    .amount {
+        font-weight: bold;
+    }
+    footer {
+        background-color: #545454;
+        color: #ffffff;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        border-radius: 10px; /* zaokrąglenie rogów */
+        display: none; /* ukrycie początkowe */
+    }
+    .footer-show {
+        display: block; /* pokazanie po zjechaniu na dół strony */
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a id="bezkoncowkihtml" href="#">&#128100;</a>
+    <span style="color: black;">Dobry wieczór, [uzytkownik1]</span>
+</header>
+
+<nav>
+    <ul>
+        <li><a id="bhtml" href="#">&#128179;</a></li>
+        <li><a id="bhtml" href="#">&#128276;</a></li>
+        <li><a id="bhtml" href="#">&#128172;</a></li>
+        <!-- Dodatkowy przycisk
+        <li><a id="bhtml" href="zmiana1.html">&#x1F60E;</a></li>
+        -->
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="balance">
+        <p>Stan konta: <span class="amount"></span></p> <!-- Przykładowy stan konta -->
+        <h2>2500,00 PLN</h2>
+    </div>
+    <div class="buttons">
+        <a id="bhtml" href="#">&#128176;</a>
+        <a id="bhtml" href="#">&#128260;</a>
+        <!-- Dodatkowy przycisk dla administratora -->
+        <a id="bhtml" href="#">&#x2026;&#x2026;&#x2026;</a>
+    </div>
+    <div class="history">
+        <div class="section">
+            <h2>Wpływy</h2>
+            <p><span class="amount">+ 1000 PLN</span> Przelew</p>
+            <p><span class="amount">+ 500 PLN</span> Wpłata na konto</p>
+            <p><span class="amount">+ 2000 PLN</span> Wpłata na konto</p>
+        </div>
+        <div class="section">
+            <h2>Wydatki</h2>
+            <p><span class="amount">- 500 PLN</span> Zakupy</p>
+            <p><span class="amount">- 300 PLN</span> Miesięczna subskrypcja</p>
+            <p><span class="amount">- 200 PLN</span> Restauracja</p>
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-show">
+    <p>&copy; 2024 Project Odyssey.</p>
+</footer>
+
+<script>
+    window.onscroll = function() {
+        showFooter();
+    };
+
+    function showFooter() {
+        var footer = document.getElementById("footer");
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollPosition > 20) {
+            footer.classList.add("footer-show");
+        } else {
+            footer.classList.remove("footer-show");
+        }
+    }
+    document.querySelectorAll("#bhtml").forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const urlWithoutExtension = this.getAttribute("href").replace(".html", "");
+            window.location.href = urlWithoutExtension;
+        });
+    });
+</script>
+
+</body>
+</html>
