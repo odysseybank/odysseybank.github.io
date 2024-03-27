@@ -67,9 +67,9 @@
         }
     }
 
-    function redirectToPage(pageName) {
-        const urlWithoutExtension = window.location.href.replace(".html", "");
-        window.location.href = `${urlWithoutExtension}_${pageName}.html`;
+function redirectToPage(pageName) {
+    const urlWithoutExtension = window.location.href.replace(".html", "");
+    window.location.href = `${urlWithoutExtension}/${pageName}`;
     }
 </script>
 
