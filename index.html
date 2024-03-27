@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaloguj sie do Odyssey</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* tło dla całej strony */
+    }
+    .container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Logowanie</h2>
+    <form action="javascript:void(0);" onsubmit="login()">
+        <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+        <input type="password" id="password" placeholder="Hasło" required>
+        <input type="submit" value="Zaloguj" id="bhtml">
+    </form>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        // Sprawdzenie poprawności loginu i hasła oraz przekierowanie do odpowiedniej strony
+        if (username === "uzytkownik1" && password === "uzytkownik1") {
+            window.location.href = "bank1.html";
+        } else if (username === "uzytkownik2" && password === "uzytkownik2") {
+            window.location.href = "bank2.html";
+        } else if (username === "uzytkownik3" && password === "uzytkownik3") {
+            window.location.href = "bank3.html";
+        } else {
+            alert("Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.");
+        }
+    }
+        document.querySelectorAll("#bhtml").forEach(button => {
+          button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const urlWithoutExtension = this.getAttribute("href").replace(".html", "");
+            window.location.href = urlWithoutExtension;
+          });
+        });
+</script>
+
+</body>
+</html>
