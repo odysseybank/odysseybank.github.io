@@ -51,26 +51,26 @@
 </div>
 
 <script>
-    function login() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        // Sprawdzenie poprawności loginu i hasła oraz przekierowanie do odpowiedniej strony
-        if (username === "uzytkownik1" && password === "uzytkownik1") {
-            window.location.href = "bank1.html";
-        } else if (username === "uzytkownik2" && password === "uzytkownik2") {
-            window.location.href = "bank2.html";
-        } else if (username === "uzytkownik3" && password === "uzytkownik3") {
-            window.location.href = "bank3.html";
-        } else {
-            alert("Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.");
-        }
+function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    // Sprawdzenie poprawności loginu i hasła oraz przekierowanie do odpowiedniej strony
+    if (username === "uzytkownik1" && password === "uzytkownik1") {
+        redirectToPage("bank1");
+    } else if (username === "uzytkownik2" && password === "uzytkownik2") {
+        redirectToPage("bank2");
+    } else if (username === "uzytkownik3" && password === "uzytkownik3") {
+        redirectToPage("bank3");
+    } else {
+        alert("Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.");
     }
-document.getElementById("bhtml").addEventListener("click", function(event) {
-    event.preventDefault();
+}
+
+function redirectToPage(pageName) {
     const urlWithoutExtension = window.location.href.replace(".html", "");
-    window.location.href = urlWithoutExtension;
-});
+    window.location.href = `${urlWithoutExtension}_${pageName}.html`;
+}
 </script>
 
 </body>
