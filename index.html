@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zaloguj sie do Odyssey</title>
+<title>Zaloguj się do Odyssey</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -46,31 +46,31 @@
     <form action="javascript:void(0);" onsubmit="login()">
         <input type="text" id="username" placeholder="Nazwa użytkownika" required>
         <input type="password" id="password" placeholder="Hasło" required>
-        <input type="submit" value="Zaloguj" id="bhtml">
+        <input type="submit" value="Zaloguj">
     </form>
 </div>
 
 <script>
-function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    
-    // Sprawdzenie poprawności loginu i hasła oraz przekierowanie do odpowiedniej strony
-    if (username === "uzytkownik1" && password === "uzytkownik1") {
-        redirectToPage("bank1");
-    } else if (username === "uzytkownik2" && password === "uzytkownik2") {
-        redirectToPage("bank2");
-    } else if (username === "uzytkownik3" && password === "uzytkownik3") {
-        redirectToPage("bank3");
-    } else {
-        alert("Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.");
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        // Sprawdzenie poprawności loginu i hasła oraz przekierowanie do odpowiedniej strony
+        if (username === "uzytkownik1" && password === "uzytkownik1") {
+            redirectToPage("bank1");
+        } else if (username === "uzytkownik2" && password === "uzytkownik2") {
+            redirectToPage("bank2");
+        } else if (username === "uzytkownik3" && password === "uzytkownik3") {
+            redirectToPage("bank3");
+        } else {
+            alert("Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.");
+        }
     }
-}
 
-function redirectToPage(pageName) {
-    const urlWithoutExtension = window.location.href.replace(".html", "");
-    window.location.href = `${urlWithoutExtension}_${pageName}.html`;
-}
+    function redirectToPage(pageName) {
+        const urlWithoutExtension = window.location.href.replace(".html", "");
+        window.location.href = `${urlWithoutExtension}_${pageName}.html`;
+    }
 </script>
 
 </body>
