@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>admin bank 1</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* tło dla całej strony */
+    }
+    .container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Zmiana stanu konta</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Login" required>
+        <input type="password" id="password" placeholder="Hasło" required>
+        <input type="submit" value="Zaloguj">
+    </form>
+    <form id="changeBalanceForm" style="display: none;">
+        <input type="number" id="newBalance" placeholder="Nowy stan konta" required>
+        <input type="submit" value="Zmień stan konta">
+    </form>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username === "admin123" && password === "admin123") {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("changeBalanceForm").style.display = "block";
+        } else {
+            alert("Niepoprawny login lub hasło.");
+        }
+    });
+
+    document.getElementById("changeBalanceForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var newBalance = document.getElementById("newBalance").value;
+        // Tutaj można dodać kod do zapisania nowego stanu konta, na przykład w pamięci przeglądarki lub wysłania na serwer.
+        alert("Stan konta został zmieniony na: " + newBalance);
+    });
+</script>
+
+</body>
+</html>
